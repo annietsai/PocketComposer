@@ -4,10 +4,9 @@ package PocketComposer;
  *  @author Annie Tsai
  */
 enum Key {
-    /** The piano keys. Names start with one or two characters
-     *  (depending on whether the note is a white or black key) for
-     *  the note name, followed by the rank (starting with 1 from
-     *  left to right on a full piano). */
+    /** The piano keys. Names start with one or two characters (depending on
+     *  whether the note is a white or black key) for the note name, followed by
+     *  the rank (starting with 1 from left to right on a full piano). */
     A1, Bb1, B1, C1, Db1, D1, Eb1, E1, F1, Gb1, G1, Ab1,
     A2, Bb2, B2, C2, Db2, D2, Eb2, E2, F2, Gb2, G2, Ab2,
     A3, Bb3, B3, C3, Db3, D3, Eb3, E3, F3, Gb3, G3, Ab3,
@@ -27,22 +26,21 @@ enum Key {
     /** Middle C. */
     static final Key MIDDLE_C = C4;
 
-    /** Return my note as a single- or double-character abbreviation,
-     *  depending on the note. */
+    /** Return my note as a single- or double-character abbreviation, depending
+     *  on the note. */
     String note() {
         String name = name();
         return name.substring(0, name.length() - 1);
     }
 
-    /** Return my octave as an integer from 1 (lowest) to 8
-     *  (highest). */
+    /** Return my octave as an integer from 1 (lowest) to 8 (highest). */
     String octave() {
         String name = name();
         return name.substring(name.length() - 1);
     }
 
-    /** Return one octave down from my octave as an integer. If
-     *  there is no valid octave, returns null. */
+    /** Return one octave down from my octave as an integer. If there is no valid
+     *  octave, return null. */
     String octaveDown() {
         int currOctave = Integer.parseInt(octave());
         if (currOctave == 1) {
@@ -52,16 +50,15 @@ enum Key {
         }
     }
 
-    /** Return one octave up from my octave as an integer. If
-     *  there is no valid octave, returns null. */
+    /** Return one octave up from my octave as an integer. If there is no valid
+     *  octave, return null. */
     String octaveUp() {
         String note = note();
         int currOctave = Integer.parseInt(octave());
         if (currOctave == NUM_OCTAVES_A_THROUGH_C) {
             return null;
-        } else if (!(note.equals("A") || note.equals("Bb")
-                   || note.equals("B") || note.equals("C")) 
-                   && currOctave == NUM_OCTAVES_ABOVE_C) {
+        } else if (!(note.equals("A") || note.equals("Bb") || note.equals("B")
+                   || note.equals("C")) && currOctave == NUM_OCTAVES_ABOVE_C) {
             return null;
         } else {
             return Integer.toString(currOctave + 1);

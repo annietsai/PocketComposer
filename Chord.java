@@ -84,9 +84,8 @@ class Chord {
         return _keys.isEmpty();
     }
 
-    /** Takes the top key of this chord and inverts it an octave
-     *  down so that the chord is inverted downwards. If the top key
-     *  cannot be inverted downwards, prints an error message and
+    /** Takes the top key of this chord and inverts it an octave downwards. If
+     *  the top key cannot be inverted downwards, prints an error message and
      *  leaves the chord as is. */
     void invertDown() {
         Key top = top();
@@ -101,9 +100,8 @@ class Chord {
         }
     }
 
-    /** Takes the bottom key of this chord and inverts it an octave
-     *  up so that the chord is inverted upwards. If the bottom key
-     *  cannot be inverted upwards, prints an error message and
+    /** Takes the bottom key of this chord and inverts it an octave upwards. If
+     *  the bottom key cannot be inverted upwards, prints an error message and
      *  leaves the chord as is. */
     void invertUp() {
         Key bottom = bottom();
