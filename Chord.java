@@ -1,6 +1,7 @@
 package PocketComposer;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /** Represents a collection of keys.
  *  @author Annie Tsai

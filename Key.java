@@ -25,7 +25,7 @@ enum Key {
     static final int NUM_SCALE_NOTES = 12;
 
     /** Middle C. */
-    static final int MIDDLE_C = C4;
+    static final Key MIDDLE_C = C4;
 
     /** Return my note as a single- or double-character abbreviation,
      *  depending on the note. */
@@ -38,7 +38,7 @@ enum Key {
      *  (highest). */
     String octave() {
         String name = name();
-        return name.charAt(name.length() - 1);
+        return name.substring(name.length() - 1);
     }
 
     /** Return one octave down from my octave as an integer. If
@@ -59,9 +59,9 @@ enum Key {
         int currOctave = Integer.parseInt(octave());
         if (currOctave == NUM_OCTAVES_A_THROUGH_C) {
             return null;
-        } else if (!(note.equals('A') || note.equals('Bb')
-                || note.equals('B') || note.equals('C')) 
-                && (currOctave == NUM_OCTAVES_ABOVE_C)) {
+        } else if (!(note.equals("A") || note.equals("Bb")
+                   || note.equals("B") || note.equals("C")) 
+                   && currOctave == NUM_OCTAVES_ABOVE_C) {
             return null;
         } else {
             return Integer.toString(currOctave + 1);
