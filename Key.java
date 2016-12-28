@@ -4,6 +4,7 @@ package PocketComposer;
  *  @author Annie Tsai
  */
 enum Key {
+
     /** The piano keys. Names start with one or two characters (depending on
      *  whether the note is a white or black key) for the note name, followed by
      *  the rank (starting with 1 from left to right on a full piano). */
