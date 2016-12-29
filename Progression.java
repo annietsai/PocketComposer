@@ -17,7 +17,7 @@ class Progression {
 
     /** Start the program for creating the chord progression. */
     void begin() {
-
+        
     }
 
     /** The sequence of chords in this progression. */

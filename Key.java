@@ -18,9 +18,9 @@ enum Key {
     A8, Bb8, B8, C8;
 
     /** Number of octaves for A through C. */
-    static final int NUM_OCTAVES_A_THROUGH_C = 8;
+    static final int NUM_OCTAVES_FOR_KEYS_A_THROUGH_C = 8;
     /** Number of octaves for Db through Ab. */
-    static final int NUM_OCTAVES_ABOVE_C = 7;
+    static final int NUM_OCTAVES_FOR_KEYS_ABOVE_C = 7;
     /** Number of notes in a scale. */
     static final int NUM_SCALE_NOTES = 12;
 
@@ -56,10 +56,11 @@ enum Key {
     String octaveUp() {
         String note = note();
         int currOctave = Integer.parseInt(octave());
-        if (currOctave == NUM_OCTAVES_A_THROUGH_C) {
+        if (currOctave == NUM_OCTAVES_FOR_KEYS_A_THROUGH_C) {
             return null;
         } else if (!(note.equals("A") || note.equals("Bb") || note.equals("B")
-                   || note.equals("C")) && currOctave == NUM_OCTAVES_ABOVE_C) {
+                   || note.equals("C"))
+                   && currOctave == NUM_OCTAVES_FOR_KEYS_ABOVE_C) {
             return null;
         } else {
             return Integer.toString(currOctave + 1);
